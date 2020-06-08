@@ -9,6 +9,11 @@ export const  selectCartItems = createSelector(
   (cart) => cart.cartItems
 );
 
+export const selectCartHidden = createSelector(
+  [selectCart],
+  cart => cart.hidden
+);
+
 // selects only the smaller piece not the whole state (just the cart items) and uses reduce to output the total quantity
 export const selectCartItemsCount = createSelector(
   [selectCartItems],
